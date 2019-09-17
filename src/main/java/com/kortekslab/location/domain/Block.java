@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,7 +24,7 @@ public class Block {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "block_id")
-	private int id;
+	private long id;
 
 	@Column(name = "name")
 	private String name;
@@ -33,7 +33,7 @@ public class Block {
 	private String gps;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_build_id")
+	@MapsId
 	private Build build;
 
 }

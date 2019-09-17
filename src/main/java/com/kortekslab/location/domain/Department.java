@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,7 +28,7 @@ public class Department {
 	@Id
 	@Column(name = "department_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 
 	@Column(name = "name")
 	private String name;
@@ -39,7 +40,7 @@ public class Department {
 	private String other;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_subunit_id")
+	@MapsId
 	private SubUnit subUnit;
 
 	@ManyToMany

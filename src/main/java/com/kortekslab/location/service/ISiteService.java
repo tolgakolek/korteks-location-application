@@ -8,5 +8,5 @@ public interface ISiteService {
 	public Site addSite(Site site);
 	public Site updateSite(Site site);
 	public List<Site> findAll();
-	public Site findFirstById(int id);
+	public Site findFirstById(long id);
 }

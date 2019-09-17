@@ -24,7 +24,7 @@ public class Device {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "device_id")
-	private int device_id;
+	private long device_id;
 
 	@Column(name = "name")
 	private String name;

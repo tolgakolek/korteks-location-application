@@ -41,7 +41,7 @@ public class SiteServiceImpl implements ISiteService {
 	}
 
 	@Override
-	public Site findFirstById(int id) {
+	public Site findFirstById(long id) {
 		return siteRepository.findFirstById(id);
 	}
 

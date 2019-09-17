@@ -24,7 +24,7 @@ public class SubUnit {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "sub_unit_id")
-	private int id;
+	private long id;
 
 	@Column(name = "name")
 	private String name;

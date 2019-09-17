@@ -21,7 +21,7 @@ public class UserContactType {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "user_contact_type_id")
-	private int id;
+	private long id;
 
 	@Column(name = "name")
 	private String name;

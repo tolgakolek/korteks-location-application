@@ -24,7 +24,7 @@ public class UserContact {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_contact_id")
-	private int id;
+	private long id;
 
 	@Column(name = "contact")
 	private String contact;

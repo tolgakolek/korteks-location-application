@@ -26,7 +26,7 @@ public class UserLogin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "user_login_id")
-	private int id;
+	private long id;
 
 	@Column(name = "login_password")
 	private String loginPassword;

@@ -23,7 +23,7 @@ public class CampusServiceImpl implements ICampusService {
 
 	@Override
 	public Campus updateCampus(Campus campus) {
-		Campus model = campusRepository.getOne(campus.getId());
+		Campus model = campusRepository.findFirstById(campus.getId());
 		if (model != null) {
 			model.setName(campus.getName());
 			// model.setState(campus.getState());
@@ -34,7 +34,7 @@ public class CampusServiceImpl implements ICampusService {
 	}
 
 	@Override
-	public Campus findFirstById(int id) {
+	public Campus findFirstById(long id) {
 		return campusRepository.findFirstById(id);
 	}
 

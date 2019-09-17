@@ -21,7 +21,7 @@ public class MainUnit {
 	@Id
 	@Column(name = "main_unit_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int mainUnitId;
+	private long mainUnitId;
 
 	@Column(name = "name")
 	private String name;

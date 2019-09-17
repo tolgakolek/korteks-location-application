@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.kortekslab.location.domain.Site;
 
 @Repository
-public interface ISiteRepository extends JpaRepository<Site, Integer> {
-	public Site findFirstById(int id);
+public interface ISiteRepository extends JpaRepository<Site, Long> {
+	public Site findFirstById(long id);
 }

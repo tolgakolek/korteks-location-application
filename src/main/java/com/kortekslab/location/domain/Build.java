@@ -24,7 +24,7 @@ public class Build {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "build_id")
-	private int id;
+	private long id;
 
 	@Column(name = "name")
 	private String name;
@@ -39,11 +39,11 @@ public class Build {
 	private String properties;
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "fk_site_id")
+	@JoinColumn(name="fk_site_id")
 	private Site site;
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "fk_campus_id")
+	@JoinColumn(name="fk_campus_id")
 	private Campus campus;
 
 }

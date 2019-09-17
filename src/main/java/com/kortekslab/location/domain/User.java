@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -34,7 +35,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
-	private int id;
+	private long id;
 
 	@Column(name = "name")
 	private String name;
@@ -46,7 +47,7 @@ public class User {
 	private String password;
 
 	@Column(name = "gender")
-	private int gender;
+	private long gender;
 
 	@Column(name = "nationId")
 	private long nationId;
@@ -68,8 +69,20 @@ public class User {
 	@JoinColumn(name = "fk_user_title_id")
 	private UserTitle userTitle;
 
+	@OneToOne(cascade = CascadeType.ALL)
+	@MapsId
+	private UserPassword userPassword;
+
 	@ManyToMany
 	@JoinTable(name = "user_user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "user_role_id"))
 	private Set<UserRole> userRole;
+	
+	@ManyToMany
+	@JoinTable(name = "user_departments", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "user_department_id"))
+	private Set<Department> userDepartment;
+
+	@ManyToMany
+	@JoinTable(name = "device_user", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "user_device_id"))
+	private Set<Device> deviceUser;
 
 }

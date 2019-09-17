@@ -15,15 +15,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "room_types")
-public class RoomType {
-
+@Table(name = "device_rooms")
+public class DeviceRoom {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "room_type_id")
+	@Column(name = "device_room_id")
 	private long id;
+	@Column(name = "location_x")
+	private String locationX;
+	@Column(name = "location_y")
+	private String locationY;
 
-	@Column(name = "Name")
-	private String name;
+	@Column(name = "device_id")
+	private long deviceId;
 
+	@Column(name = "room_id")
+	private long roomId;
 }
